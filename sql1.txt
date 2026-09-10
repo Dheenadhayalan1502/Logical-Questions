@@ -1,0 +1,16 @@
+SELECT o.order_id, c.customer_name, c.city, o.amount
+FROM orders o, customers c
+WHERE o.customer_id = c.customer_id
+AND o.amount > 5000;
+   
+   
+SELECT e.emp_name, d.dept_name, e.salary
+FROM employees e, departments d
+WHERE e.dept_id = d.dept_id
+AND e.salary > 30000
+AND d.dept_name = 'HR';
+
+
+SELECT order_id, customer_id, amount
+FROM orders
+WHERE amount > (SELECT AVG(amount) FROM orders);   
